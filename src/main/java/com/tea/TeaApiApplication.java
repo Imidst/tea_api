@@ -10,9 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan(basePackages = "com.tea.mapper")
 public class TeaApiApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(TeaApiApplication.class, args);
     }
-
 }

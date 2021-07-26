@@ -57,7 +57,7 @@ public class OverallInterceptor implements HandlerInterceptor {
                 try {
                     name = JWT.decode(token).getAudience().get(0);
                 } catch (JWTDecodeException j) {
-                    throw new RuntimeException("401");
+                    throw new RuntimeException("token验证失败");
                 }
                 User user = userService.queryOneByName(name);
                 if (user == null) {
@@ -68,7 +68,7 @@ public class OverallInterceptor implements HandlerInterceptor {
                 try {
                     jwtVerifier.verify(token);
                 } catch (JWTVerificationException e) {
-                    throw new RuntimeException("401");
+                    throw new RuntimeException("token验证失败");
                 }
                 return true;
             }
