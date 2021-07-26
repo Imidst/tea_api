@@ -1,0 +1,25 @@
+#启动端口号
+server:
+  port: 8055
+
+#mybatis
+mybatis:
+  #设置mapper所在的地址
+  mapper-locations: classpath:mapper/*.xml
+  #扫描实体类的包使之可以直接用类名
+  type-aliases-package: com.tea.entiey.po,java.lang
+  #驼峰映射
+  configuration:
+    map-underscore-to-camel-case: true
+
+#连接数据库的信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tea_api?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    #德鲁伊连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    open-in-view: false
