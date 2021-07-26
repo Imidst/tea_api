@@ -43,7 +43,7 @@ public class SwaggerConfig {
                 .description("tea_api")
                 //联系人实体类
                 .contact(
-                        new Contact("wenlong", "https://github.com/Imidst/tea_api", "midsu_wy@163.com")
+                        new Contact("wenlong", "https://github.com/Imidst/tea_api/tree/master", "midsu_wy@163.com")
                 )
                 //版本号
                 .version("1.0.0-SNAPSHOT")

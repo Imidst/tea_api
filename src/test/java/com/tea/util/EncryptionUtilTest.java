@@ -12,6 +12,6 @@ class EncryptionUtilTest {
 
     @Test
     void encryption() {
-        System.out.println(EncryptionUtil.encryptionMD5("123456"));
+        System.out.println(EncryptionUtil.encryptionMd5("123456"));
     }
 }
