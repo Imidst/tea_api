@@ -1,5 +1,8 @@
 package com.tea.service.impl;
 
+import com.tea.entiey.dto.UserEditDTO;
+import com.tea.entiey.dto.UserLoginDTO;
+import com.tea.entiey.dto.UserRegisterDTO;
 import com.tea.entiey.po.User;
 import com.tea.mapper.UserMapper;
 import com.tea.service.UserService;
@@ -17,12 +20,17 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     @Override
-    public int createUser(User user) {
+    public int editUser(UserEditDTO user) {
+        return userMapper.editUser(user);
+    }
+
+    @Override
+    public int createUser(UserRegisterDTO user) {
         return userMapper.createUser(user);
     }
 
     @Override
-    public User queryOne(User user) {
+    public User queryOne(UserLoginDTO user) {
         return userMapper.queryOne(user);
     }
 

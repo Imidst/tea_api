@@ -18,12 +18,12 @@ import java.util.Map;
 public class ResultUtil {
     private String code;
     private String message;
-    private Map data;
+    private Object data;
 
     public static ResultUtil result(String code,String message){
-        return new ResultUtil(code,message,new HashMap(2));
+        return new ResultUtil(code,message,"");
     }
-    public static ResultUtil result(String code,String message,Map data){
+    public static ResultUtil result(String code, String message, Object data){
         return new ResultUtil(code,message,data);
     }
 }

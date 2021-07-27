@@ -1,5 +1,8 @@
 package com.tea.service;
 
+import com.tea.entiey.dto.UserEditDTO;
+import com.tea.entiey.dto.UserLoginDTO;
+import com.tea.entiey.dto.UserRegisterDTO;
 import com.tea.entiey.po.User;
 
 /**
@@ -8,12 +11,21 @@ import com.tea.entiey.po.User;
  */
 public interface UserService {
     /**
+     * 修改用户信息：修改用户信息
+     *
+     * @param user
+     * @return int
+     */
+    public int editUser(UserEditDTO user);
+
+
+    /**
      * 创建用户：用于用户注册
      *
      * @param user
      * @return int
      */
-    public int createUser(User user);
+    public int createUser(UserRegisterDTO user);
 
 
     /**
@@ -22,7 +34,7 @@ public interface UserService {
      * @param user
      * @return user
      */
-    public User queryOne(User user);
+    public User queryOne(UserLoginDTO user);
 
 
     /**

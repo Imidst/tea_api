@@ -15,7 +15,7 @@ mybatis:
   #设置mapper所在的地址
   mapper-locations: classpath:mapper/*.xml
   #扫描实体类的包使之可以直接用类名
-  type-aliases-package: com.tea.entiey.po,java.lang
+  type-aliases-package: com.tea.entiey.po,com.tea.entiey.dto,java.lang
   #驼峰映射
   configuration:
     map-underscore-to-camel-case: true
