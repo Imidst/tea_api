@@ -3,6 +3,7 @@ package com.tea.service.impl;
 import com.tea.entiey.dto.UserEditDTO;
 import com.tea.entiey.dto.UserLoginDTO;
 import com.tea.entiey.dto.UserRegisterDTO;
+import com.tea.entiey.dto.UserRepassDTO;
 import com.tea.entiey.po.User;
 import com.tea.mapper.UserMapper;
 import com.tea.service.UserService;
@@ -18,6 +19,16 @@ public class UserServiceImpl implements UserService {
 
     @Autowired(required = false)
     UserMapper userMapper;
+
+    @Override
+    public int del(String name) {
+        return userMapper.del(name);
+    }
+
+    @Override
+    public int repass(UserRepassDTO user) {
+        return userMapper.repass(user);
+    }
 
     @Override
     public int editUser(UserEditDTO user) {

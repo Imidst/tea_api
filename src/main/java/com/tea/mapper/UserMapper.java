@@ -3,6 +3,7 @@ package com.tea.mapper;
 import com.tea.entiey.dto.UserEditDTO;
 import com.tea.entiey.dto.UserLoginDTO;
 import com.tea.entiey.dto.UserRegisterDTO;
+import com.tea.entiey.dto.UserRepassDTO;
 import com.tea.entiey.po.User;
 import org.mybatis.spring.annotation.MapperScan;
 
@@ -12,6 +13,24 @@ import org.mybatis.spring.annotation.MapperScan;
  */
 
 public interface UserMapper {
+    /**
+     * 注销用户
+     *
+     * @param name
+     * @return int
+     */
+    public int del(String name);
+
+
+    /**
+     * 修改密码
+     *
+     * @param user
+     * @return int
+     */
+    public int repass(UserRepassDTO user);
+
+
     /**
      * 修改用户信息：修改用户信息
      *

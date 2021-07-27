@@ -11,6 +11,7 @@ import com.tea.entiey.po.User;
 import com.tea.service.UserService;
 import com.tea.util.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

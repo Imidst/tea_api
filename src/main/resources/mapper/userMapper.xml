@@ -17,4 +17,10 @@
     <update id="editUser" parameterType="UserEditDTO">
         update tb_user set nick = #{nick},phone = #{phone} where name = #{name}
     </update>
+    <update id="repass" parameterType="UserRepassDTO">
+        update tb_user set password = #{newPass} where name = #{name}
+    </update>
+    <delete id="del" parameterType="String">
+        delete from tb_user where name = #{name}
+    </delete>
 </mapper>

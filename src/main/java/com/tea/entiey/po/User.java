@@ -11,7 +11,6 @@ import javax.persistence.Entity;
  * @create 2021/7/23 15:13
  */
 @Data
-@EntityScan
 public class User {
     String name;
     String password;

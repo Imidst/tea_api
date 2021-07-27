@@ -1,6 +1,7 @@
 package com.tea.cmd;
 
-import com.tea.util.ResultUtil;
+import com.tea.entiey.vo.ResultVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,9 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @ControllerAdvice
 public class ExceptionController {
+    @Autowired
+    ResultVO result;
+
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public ResultUtil handlerSellException(Exception e) {
-        return ResultUtil.result("E", e.getMessage());
+    public ResultVO handlerSellException(Exception e) {
+        return result.result("E", e.getMessage());
     }
 }

@@ -1,12 +1,11 @@
 package com.tea.service.impl;
 
 import com.tea.TeaApiApplicationTests;
-import com.tea.entiey.dto.UserEditDTO;
-import com.tea.entiey.po.User;
+import com.tea.entiey.dto.UserRepassDTO;
+import com.tea.util.EncryptionUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.context.ApplicationContext;
 
 /**
  * @author wenlong
@@ -18,6 +17,9 @@ class UserServiceImplTest extends TeaApiApplicationTests {
 //    User user;
     @Autowired
     UserServiceImpl userService;
+
+    @Autowired
+    ApplicationContext applicationContext;
 
     @Test
     void createUser() {
@@ -47,11 +49,21 @@ class UserServiceImplTest extends TeaApiApplicationTests {
 
     @Test
     void editUser() {
-        UserEditDTO user = new UserEditDTO();
-        user.setName("admin");
-        user.setNick("超级管理员");
-        user.setPhone("1124519374");
+//        UserEditDTO user = new UserEditDTO();
+//        user.setName("admin");
+//        user.setNick("超级管理员");
+//        user.setPhone("1124519374");
+//
+//        userService.editUser(user);
+    }
 
-        userService.editUser(user);
+
+
+    @Test
+    void repass() {
+        UserRepassDTO user = (UserRepassDTO)applicationContext.getBean("userRepassDTO");
+        user.setName("admin");
+        user.setNewPass(EncryptionUtil.encryptionMd5("123456"));
+        userService.repass(user);
     }
 }
